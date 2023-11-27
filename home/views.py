@@ -13,3 +13,7 @@ def about(request):
 
 def contact(request):
     return HttpResponse("This is a contact page")
+
+
+def projects(request):
+    return HttpResponse("This is a projects page")
