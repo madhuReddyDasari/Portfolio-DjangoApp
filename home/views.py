@@ -4,13 +4,15 @@ from django.shortcuts import render, HttpResponse
 
 
 def home(request):
+    context = {"name": "Madhu Reddy", "course": "Python"}
     # return HttpResponse("This is a home page")
-    return render(request, 'home.html')
+    return render(request, 'home.html', context=context)
 
 
 def about(request):
     # return HttpResponse("This is a about page")
-    return render(request, 'about.html')
+    context = {"name": "Madhu Reddy", "course": "Python"}
+    return render(request, 'about.html', context)
 
 
 def contact(request):
