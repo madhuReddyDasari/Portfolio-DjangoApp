@@ -45,19 +45,28 @@
         <h1 class="text-center my-3">
             Contact Me
         </h1>
-        <form>
+        <form method="post" action="/contact">
+            {%csrf_token%}
             <div class="mb-3">
-                <label for="userEmailAddress" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="userEmailAddress" aria-describedby="emailHelp"
-                    placeholder="name@example.com">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
             </div>
             <div class="mb-3">
-                <label for="userEnquiryDescription" class="form-label">Description</label>
-                <textarea class="form-control" id="userEnquiryDescription" rows="3"></textarea>
+                <label for="emailAddress" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailAddress" name="email" placeholder="name@example.com">
+                <div id="emailHelp" class="form-text text-end">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="phone" class="form-control" id="phone" name="phone">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" rows="3" name="description"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
         <div class="container">
         </div>
     </div>

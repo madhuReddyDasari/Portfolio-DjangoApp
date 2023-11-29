@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-
+from home import models
 # Create your views here.
 
 
@@ -16,6 +16,16 @@ def about(request):
 
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        desc = request.POST['description']
+        # print(name, email, phone, desc)
+        rec_obj = models.Contact(
+            name=name, email=email, phone=phone, description=desc)
+        rec_obj.save()
+        print("Record inserted into DB.")
     # return HttpResponse("This is a contact page")
     return render(request, 'contact.html')
 
